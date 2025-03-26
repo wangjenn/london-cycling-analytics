@@ -125,7 +125,7 @@
 
 **3. Ingest data:** download, ingest, and preprocess 2021-2024 data with Python. Refer to [data_ingestion](https://github.com/wangjenn/london-cycling-analytics/blob/main/scripts/data_ingestion.py) script
 
-**4. Transform data (dbt, Python)**: create all necessary aggregates and tables using **dbt**. Make sure to follow dbt's best practices (e.g., following structured model hierarchy, defining clear model dependencies). Refer to [models](https://github.com/wangjenn/london-cycling-analytics/tree/main/models) and [dbt_project.yml](https://github.com/wangjenn/london-cycling-analytics/blob/main/dbt_project.yml) 
+**4. Transform data (dbt)**: create all necessary aggregates and tables using **dbt**. Make sure to follow dbt's best practices (e.g., following structured model hierarchy, defining clear model dependencies). Refer to [models](https://github.com/wangjenn/london-cycling-analytics/tree/main/models) and [dbt_project.yml](https://github.com/wangjenn/london-cycling-analytics/blob/main/dbt_project.yml) 
 
 **5. Analyze data and generate interactive dashboards (Python):** analyze data with Python (e.g., pandas) and create interactive dashboards using Plotly in Python [NOTEBOOK HERE]-- analysis notebook. 
 
