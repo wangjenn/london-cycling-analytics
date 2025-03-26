@@ -28,41 +28,34 @@
 - **Data Lake**: Google Cloud Storage (GCS)-- cloud storage to store raw and processed datasets
 - **Data Warehouse**: BigQuery-- serverless data warehouse for analytics. **Partitioned tables** by date to optimize query performance and reduce costs 
 - **Workflow Orchestration**: semi-automated **batch processing** for workflow orchestration
-- **Transformations**: dbt/Python-- dbt and various packages in Python (e.g., pandas, numpy) to clean, transform, create, and standardize metrics. 
+- **Transformations**: dbt, Python-- dbt and various packages in Python (e.g., pandas, numpy) to clean, transform, create, and standardize metrics. 
 - **Dashboard Visualization**: Plotly (Python)-- interactive visualizations with multiple dashboard tiles and standalone HTML files for easy sharing and deployment
 
 ## Pipeline Workflow 
-1. **Data Ingestion**: **batch processing** (semi-automated workflow orchestration) 
+1. **Data Ingestion**:
+   - Batch processing (semi-automated workflow orchestration) 
    - Downloaded and preprocessed London bicycle data (Python)
    - Cleaned and standardized data (Python) 
    - Uploaded data into GCS bucket
    - Loaded data into BigQuery
 
-2. **Data Warehouse Setup**:
-   - Created optimized tables (e.g., daily_trips, station_popularity) in BigQuery 
+3. **Data Warehouse**:
+   - Created optimized tables in BigQuery 
    - Implemented date-based partitioning to improve query performance
    - Established table structure for both raw data and aggregated views
 
-3. **Data Transformation**:
-   - Created **station popularity metrics** (e.g., total_traffic, net_flow)
-   - Calculated **temporal patterns** by day of week and year
-   - Normalized data across different time periods
-   - Implemented aggregation transformations for analytics
+4. **Data Transformation**:
+   - Implemented **dbt models** with three layers:
+     - Staging: clean and standardize raw data
+     - Intermediate: create aggregated metrics
+     - Analytics: business-ready output tables for dashboards 
+   - Created **station popularity metrics** using dbt transformations
+   - Calculated **day_of_week metrics** by day of week and year with dbt dbt transformations 
+   - Normalized data across different time periods with **Python**
 
-4. **Dashboard Creation**:
-   - Generated interactive dashboards for **station popularity** and **temporal usage patterns**
+5. **Dashboard Creation**:
+   - Generated interactive dashboards for **station popularity** and **day of week usage**
    - Exported interactive HTML dashboards for easy viewing and sharing
-  
-## Data Transformations with dbt
-This project uses dbt (data build tool) to transform the raw bicycle data into analytics-ready tables:
-- **Staging models**: Clean and standardize raw data
-- **Intermediate models**: Create aggregated daily metrics
-- **Analytics models**: Generate final tables for dashboards
-
-**Key transformations include:**
-- Daily trip aggregation by day of week
-- Station popularity metrics (total_traffic, net_flow)
-- Standardized time-based analysis
 
 ---
 
@@ -120,9 +113,9 @@ This project uses dbt (data build tool) to transform the raw bicycle data into a
   - Close and restart your terminal
   - (_Optional_) Create a new virtual environment
 
-**3. Ingest data (Python):** download, ingest, and preprocess data for 2021-2024. See [SEE HERE] 
+**3. Ingest data:** download, ingest, and preprocess 2021-2024 data with Python. See [SEE HERE] 
 
-**4. Transform data (dbt, Python)**: create necessary aggregates and tables (**daily_trips, station_popularity**). See [SQL SCRIPTS] and [PYTHON JUPYTER NOTEBOOK] 
+**4. Transform data (dbt, Python)**: create necessary aggregates and tables using **dbt** and **Python**. Make sure to follow dbt's best practices (e.g., following structured model hierarchy, defining clear model dependencies). See [SQL SCRIPTS] and [PYTHON JUPYTER NOTEBOOK] 
 
 **5. Analyze data and generate interactive dashboards (Python):** analyze data with Python (e.g., pandas) and create interactive dashboards using Plotly in Python [NOTEBOOK HERE]-- analysis notebook. 
 
