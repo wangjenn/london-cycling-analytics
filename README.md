@@ -82,25 +82,40 @@
 | `net_flow`      | Difference between starts and ends (starts minus ends) | Integer   |  
 
 
---- 
+---
 
 ## ✨ Dashboards and Insights
-- See LINK
 
-### Station Popularity 
+- See ==LINK==
+
+
+
+### 🚴🏻‍♂️ Station Popularity
+
+#### **Top Bicycle Stations by Total Traffic:** 
+![](https://i.imgur.com/1dDylpf.png)
+![](https://i.imgur.com/IKNxQWK.png)
+
+![](https://i.imgur.com/2z3oVFg.png)
+
+![](https://i.imgur.com/dMclvGW.png)
 - The net_flow column is particularly interesting:
 	- **Negative values** (like Hop Exchange at -4876) mean more people end trips there than start them - these are "destination stations"
 	- **Positive values** (like Hyde Park Corner ID 1075 at +1190) mean more people start trips there than end them - these are "origin stations"
 	- **Values close to zero** indicate balanced usage (people start and end trips in equal numbers)
 
+#### **Top 5 Origin and Destination Stations** 
+![](https://i.imgur.com/3MYVFQf.png)
 
-### Day of Week Usage
 
---- 
+### 🚴🏻‍♂️ Day of Week Usage
+
+---
 
 ## ✨ Reproducibility
 - First, ensure everything is set up (e.g., Docker, GCP, BigQuery, Python, Jupyter Notebook) properly and all required packages are installed!
   
+
 **1. Clone repository**
  ```git clone https://github.com/wangjenn/london-bicycle-analysis.git``` 
 
@@ -130,6 +145,6 @@
 **5. Analyze data and generate interactive dashboards (Python):** analyze data with Python (e.g., pandas) and create interactive dashboards using Plotly in Python [NOTEBOOK HERE]-- analysis notebook. 
 
 
---- 
+---
 ### Thanks for taking the time to read through and review this project! 💕
 
