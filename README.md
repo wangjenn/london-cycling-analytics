@@ -106,9 +106,13 @@
 #### **Top 5 Origin and Destination Stations** 
 ![](https://i.imgur.com/3MYVFQf.png)
 
-
 ### 🚴🏻‍♂️ Day of Week Usage
 
+![[london_bicycle_dashboard.png]]
+- **Week day vs. Weekend Ratio by Year**
+![ScreenFloat Shot of Preview at Mar 26, 2025 at 4_41_34 PM](https://p.ipic.vip/z02sy4.png)
+
+- Commuting patterns make sense 
 ---
 
 ## ✨ Reproducibility
