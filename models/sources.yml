@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: london_cycles
+    database: custom-range-446703-e1  # Your GCP project ID
+    schema: london_cycles             # Your BigQuery dataset
+    tables:
+      - name: trips
+        description: "Daily bicycle trips data in 2021-2024"
+      - name: station_popularity   # Add other tables you've created
+        description: "Station popularity metrics in 2021-2024"

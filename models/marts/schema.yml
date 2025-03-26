@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: mart_day_of_week
+    description: "Analysis of bicycle usage patterns by day of week for 2021-2024"
+    columns:
+      - name: year
+        description: "Year of observation"
+        tests:
+          - not_null
+      - name: day_of_week
+        description: "Day of the week"
+        tests:
+          - not_null
+
+  - name: mart_station_popularity 
+    description: "Analysis of Top 15 popular stations"
+    columns: 
+      - name: station_name 
+        description: "Name of station"
+        tests: 
+          - not_null 

@@ -1,0 +1,923 @@
+[0m13:50:54.655385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a2950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087fa190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087fbd90>]}
+
+
+============================== 13:50:54.657366 | 2d2ce4ef-0fd0-4a8c-a964-585f7e2905ae ==============================
+[0m13:50:54.657366 [info ] [MainThread]: Running with dbt=1.9.1
+[0m13:50:54.657783 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'introspect': 'True', 'partial_parse': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'quiet': 'False', 'indirect_selection': 'eager', 'no_print': 'None', 'target_path': 'None', 'cache_selected_only': 'False', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'empty': 'None', 'log_cache_events': 'False', 'static_parser': 'True', 'profiles_dir': '/Users/jenniferwang/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'printer_width': '80'}
+[0m13:50:54.668126 [info ] [MainThread]: dbt version: 1.9.1
+[0m13:50:54.668465 [info ] [MainThread]: python version: 3.11.6
+[0m13:50:54.668667 [info ] [MainThread]: python path: /opt/homebrew/opt/python@3.11/bin/python3.11
+[0m13:50:54.668836 [info ] [MainThread]: os info: macOS-15.0-arm64-arm-64bit
+[0m13:50:55.761679 [info ] [MainThread]: Using profiles dir at /Users/jenniferwang/.dbt
+[0m13:50:55.762054 [info ] [MainThread]: Using profiles.yml file at /Users/jenniferwang/.dbt/profiles.yml
+[0m13:50:55.762309 [info ] [MainThread]: Using dbt_project.yml file at /Users/jenniferwang/london-cycling-analytics/dbt_project.yml
+[0m13:50:55.762490 [info ] [MainThread]: adapter type: bigquery
+[0m13:50:55.762650 [info ] [MainThread]: adapter version: 1.9.1
+[0m13:50:55.805136 [info ] [MainThread]: Configuration:
+[0m13:50:55.805509 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:50:55.805700 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:50:55.805862 [info ] [MainThread]: Required dependencies:
+[0m13:50:55.806083 [debug] [MainThread]: Executing "git --help"
+[0m13:50:55.824206 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:50:55.824895 [debug] [MainThread]: STDERR: "b''"
+[0m13:50:55.825148 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:50:55.825376 [info ] [MainThread]: Connection:
+[0m13:50:55.825641 [info ] [MainThread]:   method: oauth
+[0m13:50:55.825799 [info ] [MainThread]:   database: custom-range-446703-e1
+[0m13:50:55.825953 [info ] [MainThread]:   execution_project: custom-range-446703-e1
+[0m13:50:55.826100 [info ] [MainThread]:   schema: london_cycles
+[0m13:50:55.826249 [info ] [MainThread]:   location: US
+[0m13:50:55.826394 [info ] [MainThread]:   priority: interactive
+[0m13:50:55.826541 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:50:55.826687 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:50:55.826831 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:50:55.826979 [info ] [MainThread]:   job_retries: 1
+[0m13:50:55.827130 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:50:55.827277 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m13:50:55.827421 [info ] [MainThread]:   timeout_seconds: 300
+[0m13:50:55.827569 [info ] [MainThread]:   client_id: None
+[0m13:50:55.827709 [info ] [MainThread]:   token_uri: None
+[0m13:50:55.827851 [info ] [MainThread]:   dataproc_region: None
+[0m13:50:55.827992 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:50:55.828305 [info ] [MainThread]:   gcs_bucket: None
+[0m13:50:55.828552 [info ] [MainThread]:   dataproc_batch: None
+[0m13:50:55.828953 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m13:50:55.918454 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:50:55.918919 [debug] [MainThread]: On debug: select 1 as id
+[0m13:50:55.919146 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:50:58.677534 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:24ace479-b6fb-40cb-9a1f-1bbfea8dfd60&page=queryresults
+[0m13:50:59.111359 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:50:59.112429 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:50:59.113562 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 4.5010395, "process_in_blocks": "0", "process_kernel_time": 2.299742, "process_mem_max_rss": "227360768", "process_out_blocks": "0", "process_user_time": 1.741452}
+[0m13:50:59.114218 [debug] [MainThread]: Command `dbt debug` succeeded at 13:50:59.114128 after 4.50 seconds
+[0m13:50:59.114610 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:50:59.114993 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108798510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13f252bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1022c1cd0>]}
+[0m13:50:59.115376 [debug] [MainThread]: Flushing usage events
+[0m13:50:59.484352 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:51:26.810047 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111ea6910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111e9ef90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111f1ce90>]}
+
+
+============================== 13:51:26.819388 | f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a ==============================
+[0m13:51:26.819388 [info ] [MainThread]: Running with dbt=1.9.1
+[0m13:51:26.823038 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'partial_parse': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'introspect': 'True', 'invocation_command': 'dbt run --models staging.stg_journeys', 'use_colors': 'True', 'no_print': 'None', 'static_parser': 'True', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'profiles_dir': '/Users/jenniferwang/.dbt', 'warn_error': 'None', 'printer_width': '80', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'debug': 'False', 'quiet': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'write_json': 'True', 'version_check': 'True', 'log_format': 'default', 'empty': 'False'}
+[0m13:51:28.202648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11194ce10>]}
+[0m13:51:28.227503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10691d1d0>]}
+[0m13:51:28.227892 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m13:51:28.318254 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m13:51:28.318803 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:51:28.319052 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x153a639d0>]}
+[0m13:51:28.874613 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.london_cycling_analytics.intermediate
+- models.london_cycling_analytics.marts
+[0m13:51:28.880127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1536fb950>]}
+[0m13:51:28.913639 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m13:51:28.917081 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m13:51:28.928483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x153e59bd0>]}
+[0m13:51:28.928788 [info ] [MainThread]: Found 1 model, 1 source, 489 macros
+[0m13:51:28.929003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x153c73010>]}
+[0m13:51:28.929737 [info ] [MainThread]: 
+[0m13:51:28.929964 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:51:28.930131 [info ] [MainThread]: 
+[0m13:51:28.930423 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:51:28.930967 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m13:51:28.931211 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:51:30.053943 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m13:51:30.055159 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:51:30.376907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1104e5550>]}
+[0m13:51:30.377501 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:51:30.379457 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.stg_journeys
+[0m13:51:30.379887 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.stg_journeys ......................... [RUN]
+[0m13:51:30.380317 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.stg_journeys)
+[0m13:51:30.380681 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.stg_journeys
+[0m13:51:30.388429 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:51:30.393213 [debug] [Thread-1 (]: Compilation Error in model stg_journeys (models/staging/stg_journeys.sql)
+  type object 'MacroFuzzEnvironment' has no attribute 'concat'
+[0m13:51:30.397509 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f2b9f4d9-6c4d-4692-a04b-0de1f14d5e3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111eb74d0>]}
+[0m13:51:30.397963 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model london_cycles.stg_journeys ................ [[31mERROR[0m in 0.02s]
+[0m13:51:30.398296 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.stg_journeys
+[0m13:51:30.398659 [debug] [Thread-7 (]: Marking all children of 'model.london_cycling_analytics.stg_journeys' to be skipped because of status 'error'.  Reason: Compilation Error in model stg_journeys (models/staging/stg_journeys.sql)
+  type object 'MacroFuzzEnvironment' has no attribute 'concat'.
+[0m13:51:30.399971 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:51:30.400369 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:51:30.400548 [debug] [MainThread]: Connection 'model.london_cycling_analytics.stg_journeys' was properly closed.
+[0m13:51:30.400740 [info ] [MainThread]: 
+[0m13:51:30.400929 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.47 seconds (1.47s).
+[0m13:51:30.401270 [debug] [MainThread]: Command end result
+[0m13:51:30.414124 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m13:51:30.415261 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m13:51:30.418053 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m13:51:30.418241 [info ] [MainThread]: 
+[0m13:51:30.418461 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m13:51:30.418629 [info ] [MainThread]: 
+[0m13:51:30.418830 [error] [MainThread]:   Compilation Error in model stg_journeys (models/staging/stg_journeys.sql)
+  type object 'MacroFuzzEnvironment' has no attribute 'concat'
+[0m13:51:30.418992 [info ] [MainThread]: 
+[0m13:51:30.419166 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m13:51:30.419458 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.6743033, "process_in_blocks": "0", "process_kernel_time": 2.10047, "process_mem_max_rss": "238927872", "process_out_blocks": "0", "process_user_time": 2.79856}
+[0m13:51:30.419924 [debug] [MainThread]: Command `dbt run` failed at 13:51:30.419824 after 3.67 seconds
+[0m13:51:30.420257 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111e9e710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045f71d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045f7090>]}
+[0m13:51:30.420494 [debug] [MainThread]: Flushing usage events
+[0m13:51:30.990103 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:53:52.167979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cab510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cfff90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cfffd0>]}
+
+
+============================== 13:53:52.171533 | bead1933-1475-4d12-b77b-648da17551b4 ==============================
+[0m13:53:52.171533 [info ] [MainThread]: Running with dbt=1.9.1
+[0m13:53:52.171943 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'printer_width': '80', 'quiet': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'version_check': 'True', 'partial_parse': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'introspect': 'True', 'write_json': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --models staging.stg_journeys', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'profiles_dir': '/Users/jenniferwang/.dbt', 'warn_error': 'None', 'no_print': 'None'}
+[0m13:53:53.367170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bead1933-1475-4d12-b77b-648da17551b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d30290>]}
+[0m13:53:53.393067 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bead1933-1475-4d12-b77b-648da17551b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10551c8d0>]}
+[0m13:53:53.393544 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m13:53:53.485190 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m13:53:53.544959 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m13:53:53.545476 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/staging/stg_journeys.sql
+[0m13:53:53.656714 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.london_cycling_analytics.marts
+- models.london_cycling_analytics.intermediate
+[0m13:53:53.662577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bead1933-1475-4d12-b77b-648da17551b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16d74bd50>]}
+[0m13:53:53.760058 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m13:53:53.763628 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m13:53:53.775130 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bead1933-1475-4d12-b77b-648da17551b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16ecca610>]}
+[0m13:53:53.775465 [info ] [MainThread]: Found 1 model, 1 source, 489 macros
+[0m13:53:53.775670 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bead1933-1475-4d12-b77b-648da17551b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16d75e250>]}
+[0m13:53:53.776427 [info ] [MainThread]: 
+[0m13:53:53.776703 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:53:53.776918 [info ] [MainThread]: 
+[0m13:53:53.777350 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:53:53.777954 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m13:53:53.778291 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:53:55.012677 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m13:53:55.013236 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:53:55.306238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bead1933-1475-4d12-b77b-648da17551b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16d4d7dd0>]}
+[0m13:53:55.306867 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:53:55.308388 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.stg_journeys
+[0m13:53:55.308838 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.stg_journeys ......................... [RUN]
+[0m13:53:55.309220 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.stg_journeys)
+[0m13:53:55.309496 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.stg_journeys
+[0m13:53:55.318943 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:53:55.323961 [debug] [Thread-1 (]: Compilation Error in model stg_journeys (models/staging/stg_journeys.sql)
+  type object 'MacroFuzzEnvironment' has no attribute 'concat'
+[0m13:53:55.325637 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bead1933-1475-4d12-b77b-648da17551b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16d3c3710>]}
+[0m13:53:55.326271 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model london_cycles.stg_journeys ................ [[31mERROR[0m in 0.02s]
+[0m13:53:55.326736 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.stg_journeys
+[0m13:53:55.327224 [debug] [Thread-7 (]: Marking all children of 'model.london_cycling_analytics.stg_journeys' to be skipped because of status 'error'.  Reason: Compilation Error in model stg_journeys (models/staging/stg_journeys.sql)
+  type object 'MacroFuzzEnvironment' has no attribute 'concat'.
+[0m13:53:55.328890 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:53:55.329397 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:53:55.329657 [debug] [MainThread]: Connection 'model.london_cycling_analytics.stg_journeys' was properly closed.
+[0m13:53:55.329944 [info ] [MainThread]: 
+[0m13:53:55.330215 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.55 seconds (1.55s).
+[0m13:53:55.330699 [debug] [MainThread]: Command end result
+[0m13:53:55.347370 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m13:53:55.349313 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m13:53:55.353440 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m13:53:55.353710 [info ] [MainThread]: 
+[0m13:53:55.354006 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m13:53:55.354406 [info ] [MainThread]: 
+[0m13:53:55.354752 [error] [MainThread]:   Compilation Error in model stg_journeys (models/staging/stg_journeys.sql)
+  type object 'MacroFuzzEnvironment' has no attribute 'concat'
+[0m13:53:55.354996 [info ] [MainThread]: 
+[0m13:53:55.355292 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m13:53:55.355847 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.2334194, "process_in_blocks": "0", "process_kernel_time": 2.394362, "process_mem_max_rss": "241336320", "process_out_blocks": "0", "process_user_time": 2.035494}
+[0m13:53:55.356267 [debug] [MainThread]: Command `dbt run` failed at 13:53:55.356209 after 3.23 seconds
+[0m13:53:55.356719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105657650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102fb71d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16bd00910>]}
+[0m13:53:55.357081 [debug] [MainThread]: Flushing usage events
+[0m13:53:55.953829 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:54:37.907316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1198dce50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1199468d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119947610>]}
+
+
+============================== 13:54:37.909616 | b62a852e-1eff-43b6-b55e-2c32474675b2 ==============================
+[0m13:54:37.909616 [info ] [MainThread]: Running with dbt=1.9.1
+[0m13:54:37.910007 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/jenniferwang/.dbt', 'log_format': 'default', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'no_print': 'None', 'warn_error': 'None', 'static_parser': 'True', 'printer_width': '80', 'invocation_command': 'dbt run --models staging.stg_journeys', 'fail_fast': 'False', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'empty': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'introspect': 'True', 'debug': 'False', 'quiet': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'use_colors': 'True', 'write_json': 'True'}
+[0m13:54:39.069750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b62a852e-1eff-43b6-b55e-2c32474675b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x163dd8510>]}
+[0m13:54:39.094704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b62a852e-1eff-43b6-b55e-2c32474675b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107155e50>]}
+[0m13:54:39.095100 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m13:54:39.189038 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m13:54:39.252849 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 2 files added, 0 files changed.
+[0m13:54:39.253295 [debug] [MainThread]: Partial parsing: added file: london_cycling_analytics://models/intermediate/int_placeholder.sql
+[0m13:54:39.253486 [debug] [MainThread]: Partial parsing: added file: london_cycling_analytics://models/marts/mart_placeholder.sql
+[0m13:54:39.367306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b62a852e-1eff-43b6-b55e-2c32474675b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x163f78e10>]}
+[0m13:54:39.469166 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m13:54:39.472659 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m13:54:39.486871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b62a852e-1eff-43b6-b55e-2c32474675b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1641ffed0>]}
+[0m13:54:39.487213 [info ] [MainThread]: Found 3 models, 1 source, 489 macros
+[0m13:54:39.487416 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b62a852e-1eff-43b6-b55e-2c32474675b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16441b810>]}
+[0m13:54:39.488654 [info ] [MainThread]: 
+[0m13:54:39.488872 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:54:39.489028 [info ] [MainThread]: 
+[0m13:54:39.489308 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:54:39.489865 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m13:54:39.490283 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:54:40.605194 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m13:54:40.605704 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:54:40.872301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b62a852e-1eff-43b6-b55e-2c32474675b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1644dbf50>]}
+[0m13:54:40.872819 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:54:40.873985 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.stg_journeys
+[0m13:54:40.874297 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.stg_journeys ......................... [RUN]
+[0m13:54:40.874594 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.stg_journeys)
+[0m13:54:40.874816 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.stg_journeys
+[0m13:54:40.879847 [debug] [Thread-1 (]: Writing injected SQL for node "model.london_cycling_analytics.stg_journeys"
+[0m13:54:40.880873 [debug] [Thread-1 (]: Began executing node model.london_cycling_analytics.stg_journeys
+[0m13:54:40.900495 [debug] [Thread-1 (]: Writing runtime sql for node "model.london_cycling_analytics.stg_journeys"
+[0m13:54:40.901574 [debug] [Thread-1 (]: On model.london_cycling_analytics.stg_journeys: /* {"app": "dbt", "dbt_version": "1.9.1", "profile_name": "london_cycling_analytics", "target_name": "dev", "node_id": "model.london_cycling_analytics.stg_journeys"} */
+
+
+  create or replace view `custom-range-446703-e1`.`london_cycles`.`stg_journeys`
+  OPTIONS()
+  as 
+
+SELECT 
+    rental_id,
+    duration,
+    start_date,
+    end_date,
+    start_station_id,
+    start_station_name,
+    end_station_id,
+    end_station_name,
+    DATE(start_date) AS trip_date,
+    CASE
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 1 THEN 'Sunday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 2 THEN 'Monday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 3 THEN 'Tuesday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 4 THEN 'Wednesday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 5 THEN 'Thursday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 6 THEN 'Friday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 7 THEN 'Saturday'
+    END AS day_of_week,
+    EXTRACT(HOUR FROM start_date) AS hour_of_day,
+    EXTRACT(YEAR FROM start_date) AS year
+FROM `custom-range-446703-e1`.`london_cycles`.`raw_journeys`
+WHERE 
+    duration >= 60 AND duration <= 86400  -- Between 1 min and 24 hours
+    AND start_station_id IS NOT NULL 
+    AND end_station_id IS NOT NULL;
+
+
+[0m13:54:40.901951 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:41.437215 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:aff0f32a-1165-4bd9-a87c-a9660f11f05c&page=queryresults
+[0m13:54:41.437674 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:aff0f32a-1165-4bd9-a87c-a9660f11f05c&page=queryresults
+[0m13:54:41.445146 [debug] [Thread-1 (]: Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Not found: Table custom-range-446703-e1:london_cycles.raw_journeys was not found in location US
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql
+[0m13:54:41.446396 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b62a852e-1eff-43b6-b55e-2c32474675b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x163dc9a10>]}
+[0m13:54:41.446864 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model london_cycles.stg_journeys ................ [[31mERROR[0m in 0.57s]
+[0m13:54:41.447196 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.stg_journeys
+[0m13:54:41.447501 [debug] [Thread-7 (]: Marking all children of 'model.london_cycling_analytics.stg_journeys' to be skipped because of status 'error'.  Reason: Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Not found: Table custom-range-446703-e1:london_cycles.raw_journeys was not found in location US
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql.
+[0m13:54:41.448684 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:54:41.449081 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:54:41.449259 [debug] [MainThread]: Connection 'model.london_cycling_analytics.stg_journeys' was properly closed.
+[0m13:54:41.449460 [info ] [MainThread]: 
+[0m13:54:41.449647 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.96 seconds (1.96s).
+[0m13:54:41.449982 [debug] [MainThread]: Command end result
+[0m13:54:41.462762 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m13:54:41.463958 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m13:54:41.467232 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m13:54:41.467455 [info ] [MainThread]: 
+[0m13:54:41.467677 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m13:54:41.467850 [info ] [MainThread]: 
+[0m13:54:41.468054 [error] [MainThread]:   Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Not found: Table custom-range-446703-e1:london_cycles.raw_journeys was not found in location US
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql
+[0m13:54:41.468214 [info ] [MainThread]: 
+[0m13:54:41.468390 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m13:54:41.468767 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.6047668, "process_in_blocks": "0", "process_kernel_time": 2.237855, "process_mem_max_rss": "241729536", "process_out_blocks": "0", "process_user_time": 2.082148}
+[0m13:54:41.469233 [debug] [MainThread]: Command `dbt run` failed at 13:54:41.469162 after 3.61 seconds
+[0m13:54:41.469544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1031db190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1031db210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x163f473d0>]}
+[0m13:54:41.469793 [debug] [MainThread]: Flushing usage events
+[0m13:54:41.831747 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:58:56.252082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1065da990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066469d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106647750>]}
+
+
+============================== 13:58:56.254659 | 53388af0-a30b-4df4-92eb-4cb1f4c6c90c ==============================
+[0m13:58:56.254659 [info ] [MainThread]: Running with dbt=1.9.1
+[0m13:58:56.255055 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'printer_width': '80', 'profiles_dir': '/Users/jenniferwang/.dbt', 'quiet': 'False', 'invocation_command': 'dbt run --models staging.stg_journeys', 'target_path': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'use_colors': 'True', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'write_json': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'empty': 'False', 'use_experimental_parser': 'False', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'debug': 'False', 'warn_error': 'None', 'introspect': 'True'}
+[0m13:58:57.454771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '53388af0-a30b-4df4-92eb-4cb1f4c6c90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056a0d50>]}
+[0m13:58:57.480694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '53388af0-a30b-4df4-92eb-4cb1f4c6c90c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103555f50>]}
+[0m13:58:57.481185 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m13:58:57.572071 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m13:58:57.631213 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m13:58:57.631675 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/sources.yml
+[0m13:58:57.631876 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/staging/stg_journeys.sql
+[0m13:58:57.719751 [error] [MainThread]: Encountered an error:
+Compilation Error in model stg_journeys (models/staging/stg_journeys.sql)
+  source() takes exactly two arguments (1 given)
+[0m13:58:57.720235 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.5136697, "process_in_blocks": "0", "process_kernel_time": 2.136597, "process_mem_max_rss": "237535232", "process_out_blocks": "0", "process_user_time": 2.014987}
+[0m13:58:57.720563 [debug] [MainThread]: Command `dbt run` failed at 13:58:57.720515 after 1.51 seconds
+[0m13:58:57.720827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106646750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106647510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1484c3e90>]}
+[0m13:58:57.721065 [debug] [MainThread]: Flushing usage events
+[0m13:58:58.296785 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:59:40.188015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1135da850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11363e710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11363f450>]}
+
+
+============================== 13:59:40.190351 | b6e34268-61f0-4fdb-bc06-d35c2478fc6c ==============================
+[0m13:59:40.190351 [info ] [MainThread]: Running with dbt=1.9.1
+[0m13:59:40.190801 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run --models staging.stg_journeys', 'fail_fast': 'False', 'version_check': 'True', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'use_experimental_parser': 'False', 'static_parser': 'True', 'debug': 'False', 'use_colors': 'True', 'log_format': 'default', 'profiles_dir': '/Users/jenniferwang/.dbt', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'write_json': 'True', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'printer_width': '80', 'indirect_selection': 'eager'}
+[0m13:59:41.288003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b6e34268-61f0-4fdb-bc06-d35c2478fc6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1126870d0>]}
+[0m13:59:41.314741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b6e34268-61f0-4fdb-bc06-d35c2478fc6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110e368d0>]}
+[0m13:59:41.315241 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m13:59:41.408973 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m13:59:41.474803 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m13:59:41.475309 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/sources.yml
+[0m13:59:41.475525 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/staging/stg_journeys.sql
+[0m13:59:41.703650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b6e34268-61f0-4fdb-bc06-d35c2478fc6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1423e7a10>]}
+[0m13:59:41.737567 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m13:59:41.741588 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m13:59:41.755446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b6e34268-61f0-4fdb-bc06-d35c2478fc6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1134b8f10>]}
+[0m13:59:41.755839 [info ] [MainThread]: Found 3 models, 2 sources, 489 macros
+[0m13:59:41.756053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b6e34268-61f0-4fdb-bc06-d35c2478fc6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11307c350>]}
+[0m13:59:41.757315 [info ] [MainThread]: 
+[0m13:59:41.757564 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:59:41.757723 [info ] [MainThread]: 
+[0m13:59:41.758022 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:59:41.758655 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m13:59:41.758973 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:59:43.179500 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m13:59:43.179986 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:59:43.447152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b6e34268-61f0-4fdb-bc06-d35c2478fc6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1423f4250>]}
+[0m13:59:43.447744 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:59:43.449254 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.stg_journeys
+[0m13:59:43.449695 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.stg_journeys ......................... [RUN]
+[0m13:59:43.450036 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.stg_journeys)
+[0m13:59:43.450309 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.stg_journeys
+[0m13:59:43.456408 [debug] [Thread-1 (]: Writing injected SQL for node "model.london_cycling_analytics.stg_journeys"
+[0m13:59:43.457097 [debug] [Thread-1 (]: Began executing node model.london_cycling_analytics.stg_journeys
+[0m13:59:43.483523 [debug] [Thread-1 (]: Writing runtime sql for node "model.london_cycling_analytics.stg_journeys"
+[0m13:59:43.484361 [debug] [Thread-1 (]: On model.london_cycling_analytics.stg_journeys: /* {"app": "dbt", "dbt_version": "1.9.1", "profile_name": "london_cycling_analytics", "target_name": "dev", "node_id": "model.london_cycling_analytics.stg_journeys"} */
+
+
+  create or replace view `custom-range-446703-e1`.`london_cycles`.`stg_journeys`
+  OPTIONS()
+  as 
+
+SELECT 
+    rental_id,
+    duration,
+    start_date,
+    end_date,
+    start_station_id,
+    start_station_name,
+    end_station_id,
+    end_station_name,
+    DATE(start_date) AS trip_date,
+    CASE
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 1 THEN 'Sunday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 2 THEN 'Monday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 3 THEN 'Tuesday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 4 THEN 'Wednesday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 5 THEN 'Thursday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 6 THEN 'Friday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 7 THEN 'Saturday'
+    END AS day_of_week,
+    EXTRACT(HOUR FROM start_date) AS hour_of_day,
+    EXTRACT(YEAR FROM start_date) AS year
+FROM `custom-range-446703-e1`.`london_cycles`.`station_popularity`
+WHERE 
+    duration >= 60 AND duration <= 86400  -- Between 1 min and 24 hours
+    AND start_station_id IS NOT NULL 
+    AND end_station_id IS NOT NULL;
+
+
+[0m13:59:43.484785 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:59:44.107939 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:0f4291a3-dd3c-488a-8633-51374999b756&page=queryresults
+[0m13:59:44.306031 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:0f4291a3-dd3c-488a-8633-51374999b756&page=queryresults
+[0m13:59:44.316568 [debug] [Thread-1 (]: Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Unrecognized name: duration at [31:5]
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql
+[0m13:59:44.318934 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b6e34268-61f0-4fdb-bc06-d35c2478fc6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x142b3ca50>]}
+[0m13:59:44.319589 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model london_cycles.stg_journeys ................ [[31mERROR[0m in 0.87s]
+[0m13:59:44.319989 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.stg_journeys
+[0m13:59:44.320362 [debug] [Thread-7 (]: Marking all children of 'model.london_cycling_analytics.stg_journeys' to be skipped because of status 'error'.  Reason: Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Unrecognized name: duration at [31:5]
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql.
+[0m13:59:44.321830 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:59:44.322445 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:59:44.322741 [debug] [MainThread]: Connection 'model.london_cycling_analytics.stg_journeys' was properly closed.
+[0m13:59:44.323113 [info ] [MainThread]: 
+[0m13:59:44.323482 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.57 seconds (2.57s).
+[0m13:59:44.324119 [debug] [MainThread]: Command end result
+[0m13:59:44.338846 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m13:59:44.340090 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m13:59:44.342995 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m13:59:44.343238 [info ] [MainThread]: 
+[0m13:59:44.343536 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m13:59:44.343776 [info ] [MainThread]: 
+[0m13:59:44.344052 [error] [MainThread]:   Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Unrecognized name: duration at [31:5]
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql
+[0m13:59:44.344271 [info ] [MainThread]: 
+[0m13:59:44.344513 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m13:59:44.344918 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 4.200947, "process_in_blocks": "0", "process_kernel_time": 2.174445, "process_mem_max_rss": "242565120", "process_out_blocks": "0", "process_user_time": 2.292945}
+[0m13:59:44.345327 [debug] [MainThread]: Command `dbt run` failed at 13:59:44.345274 after 4.20 seconds
+[0m13:59:44.345651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1047ab090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1047ab190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110e2ab50>]}
+[0m13:59:44.345920 [debug] [MainThread]: Flushing usage events
+[0m13:59:44.691752 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:00:17.112430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10662aed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106646a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106647810>]}
+
+
+============================== 14:00:17.116766 | 9f338895-aec5-482f-96e2-ea616bb13e50 ==============================
+[0m14:00:17.116766 [info ] [MainThread]: Running with dbt=1.9.1
+[0m14:00:17.117232 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'quiet': 'False', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'log_format': 'default', 'indirect_selection': 'eager', 'no_print': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --models staging.stg_journeys', 'version_check': 'True', 'use_experimental_parser': 'False', 'warn_error': 'None', 'empty': 'False', 'static_parser': 'True', 'partial_parse': 'True', 'debug': 'False', 'printer_width': '80', 'profiles_dir': '/Users/jenniferwang/.dbt', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'write_json': 'True'}
+[0m14:00:18.610974 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9f338895-aec5-482f-96e2-ea616bb13e50', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106620390>]}
+[0m14:00:18.638207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9f338895-aec5-482f-96e2-ea616bb13e50', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103857a50>]}
+[0m14:00:18.638826 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:00:18.735850 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m14:00:18.803185 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:00:18.803666 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/staging/stg_journeys.sql
+[0m14:00:18.924591 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9f338895-aec5-482f-96e2-ea616bb13e50', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138368bd0>]}
+[0m14:00:19.021261 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:00:19.024825 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:00:19.037660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9f338895-aec5-482f-96e2-ea616bb13e50', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f747610>]}
+[0m14:00:19.038004 [info ] [MainThread]: Found 3 models, 2 sources, 489 macros
+[0m14:00:19.038193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9f338895-aec5-482f-96e2-ea616bb13e50', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f6fc490>]}
+[0m14:00:19.038973 [info ] [MainThread]: 
+[0m14:00:19.039164 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:00:19.039315 [info ] [MainThread]: 
+[0m14:00:19.039590 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:00:19.040062 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m14:00:19.040291 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:00:20.096850 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m14:00:20.097409 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:00:20.376208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9f338895-aec5-482f-96e2-ea616bb13e50', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f6b1b50>]}
+[0m14:00:20.376637 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:00:20.378132 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.stg_journeys
+[0m14:00:20.378470 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.stg_journeys ......................... [RUN]
+[0m14:00:20.378744 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.stg_journeys)
+[0m14:00:20.378946 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.stg_journeys
+[0m14:00:20.383764 [debug] [Thread-1 (]: Writing injected SQL for node "model.london_cycling_analytics.stg_journeys"
+[0m14:00:20.384197 [debug] [Thread-1 (]: Began executing node model.london_cycling_analytics.stg_journeys
+[0m14:00:20.399199 [debug] [Thread-1 (]: Writing runtime sql for node "model.london_cycling_analytics.stg_journeys"
+[0m14:00:20.399719 [debug] [Thread-1 (]: On model.london_cycling_analytics.stg_journeys: /* {"app": "dbt", "dbt_version": "1.9.1", "profile_name": "london_cycling_analytics", "target_name": "dev", "node_id": "model.london_cycling_analytics.stg_journeys"} */
+
+
+  create or replace view `custom-range-446703-e1`.`london_cycles`.`stg_journeys`
+  OPTIONS()
+  as 
+
+SELECT 
+    rental_id,
+    duration,
+    start_date,
+    end_date,
+    start_station_id,
+    start_station_name,
+    end_station_id,
+    end_station_name,
+    DATE(start_date) AS trip_date,
+    CASE
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 1 THEN 'Sunday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 2 THEN 'Monday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 3 THEN 'Tuesday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 4 THEN 'Wednesday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 5 THEN 'Thursday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 6 THEN 'Friday'
+        WHEN EXTRACT(DAYOFWEEK FROM start_date) = 7 THEN 'Saturday'
+    END AS day_of_week,
+    EXTRACT(HOUR FROM start_date) AS hour_of_day,
+    EXTRACT(YEAR FROM start_date) AS year
+FROM `custom-range-446703-e1`.`london_cycles`.`station_popularity`
+WHERE start_station_id IS NOT NULL 
+    AND end_station_id IS NOT NULL;
+
+
+[0m14:00:20.400017 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:21.003424 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:d26e36ae-0652-46c7-ab18-a4615f5cfab4&page=queryresults
+[0m14:00:21.181485 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:d26e36ae-0652-46c7-ab18-a4615f5cfab4&page=queryresults
+[0m14:00:21.187894 [debug] [Thread-1 (]: Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Unrecognized name: start_station_id at [30:7]
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql
+[0m14:00:21.189488 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9f338895-aec5-482f-96e2-ea616bb13e50', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13838d610>]}
+[0m14:00:21.190083 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model london_cycles.stg_journeys ................ [[31mERROR[0m in 0.81s]
+[0m14:00:21.190450 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.stg_journeys
+[0m14:00:21.190789 [debug] [Thread-7 (]: Marking all children of 'model.london_cycling_analytics.stg_journeys' to be skipped because of status 'error'.  Reason: Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Unrecognized name: start_station_id at [30:7]
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql.
+[0m14:00:21.192209 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:00:21.192638 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:00:21.192850 [debug] [MainThread]: Connection 'model.london_cycling_analytics.stg_journeys' was properly closed.
+[0m14:00:21.193062 [info ] [MainThread]: 
+[0m14:00:21.193270 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.15 seconds (2.15s).
+[0m14:00:21.193622 [debug] [MainThread]: Command end result
+[0m14:00:21.205746 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:00:21.207219 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:00:21.210169 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m14:00:21.210354 [info ] [MainThread]: 
+[0m14:00:21.210586 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m14:00:21.210756 [info ] [MainThread]: 
+[0m14:00:21.210962 [error] [MainThread]:   Database Error in model stg_journeys (models/staging/stg_journeys.sql)
+  Unrecognized name: start_station_id at [30:7]
+  compiled code at target/run/london_cycling_analytics/models/staging/stg_journeys.sql
+[0m14:00:21.211115 [info ] [MainThread]: 
+[0m14:00:21.211290 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m14:00:21.211625 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 4.1698074, "process_in_blocks": "0", "process_kernel_time": 1.899081, "process_mem_max_rss": "234029056", "process_out_blocks": "0", "process_user_time": 2.761256}
+[0m14:00:21.211972 [debug] [MainThread]: Command `dbt run` failed at 14:00:21.211933 after 4.17 seconds
+[0m14:00:21.212231 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1006c3090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1006c3190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f6f7050>]}
+[0m14:00:21.212424 [debug] [MainThread]: Flushing usage events
+[0m14:00:21.779102 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:02:00.754225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107de00d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e28810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e3ef90>]}
+
+
+============================== 14:02:00.758150 | 12c46cc1-f54b-4ad1-8717-b5551ed0dbc0 ==============================
+[0m14:02:00.758150 [info ] [MainThread]: Running with dbt=1.9.1
+[0m14:02:00.758666 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'no_print': 'None', 'invocation_command': 'dbt run --models staging.stg_journeys', 'cache_selected_only': 'False', 'quiet': 'False', 'printer_width': '80', 'profiles_dir': '/Users/jenniferwang/.dbt', 'target_path': 'None', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'version_check': 'True', 'log_format': 'default', 'empty': 'False', 'write_json': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'log_cache_events': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'warn_error': 'None'}
+[0m14:02:02.104961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '12c46cc1-f54b-4ad1-8717-b5551ed0dbc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x147582790>]}
+[0m14:02:02.131117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '12c46cc1-f54b-4ad1-8717-b5551ed0dbc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10472de90>]}
+[0m14:02:02.131708 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:02:02.229708 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m14:02:02.294320 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:02:02.294746 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/staging/stg_journeys.sql
+[0m14:02:02.410268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '12c46cc1-f54b-4ad1-8717-b5551ed0dbc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15054bbd0>]}
+[0m14:02:02.521197 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:02:02.525262 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:02:02.541767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '12c46cc1-f54b-4ad1-8717-b5551ed0dbc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x147f007d0>]}
+[0m14:02:02.542213 [info ] [MainThread]: Found 3 models, 2 sources, 489 macros
+[0m14:02:02.542601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '12c46cc1-f54b-4ad1-8717-b5551ed0dbc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1505f99d0>]}
+[0m14:02:02.543671 [info ] [MainThread]: 
+[0m14:02:02.543911 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:02:02.544079 [info ] [MainThread]: 
+[0m14:02:02.544373 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:02:02.544994 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m14:02:02.545379 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:02:03.802365 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m14:02:03.802953 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:02:04.033098 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '12c46cc1-f54b-4ad1-8717-b5551ed0dbc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1505f86d0>]}
+[0m14:02:04.033648 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:02:04.035509 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.stg_journeys
+[0m14:02:04.035939 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.stg_journeys ......................... [RUN]
+[0m14:02:04.036278 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.stg_journeys)
+[0m14:02:04.036552 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.stg_journeys
+[0m14:02:04.043029 [debug] [Thread-1 (]: Writing injected SQL for node "model.london_cycling_analytics.stg_journeys"
+[0m14:02:04.043979 [debug] [Thread-1 (]: Began executing node model.london_cycling_analytics.stg_journeys
+[0m14:02:04.067535 [debug] [Thread-1 (]: Writing runtime sql for node "model.london_cycling_analytics.stg_journeys"
+[0m14:02:04.068303 [debug] [Thread-1 (]: On model.london_cycling_analytics.stg_journeys: /* {"app": "dbt", "dbt_version": "1.9.1", "profile_name": "london_cycling_analytics", "target_name": "dev", "node_id": "model.london_cycling_analytics.stg_journeys"} */
+
+
+  create or replace view `custom-range-446703-e1`.`london_cycles`.`stg_journeys`
+  OPTIONS()
+  as 
+
+SELECT *
+FROM `custom-range-446703-e1`.`london_cycles`.`station_popularity`
+WHERE station_id IS NOT NULL;
+
+
+[0m14:02:04.068643 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:02:04.673001 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:f3d0898f-27ea-467f-9a44-68f1086ac671&page=queryresults
+[0m14:02:05.341980 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '12c46cc1-f54b-4ad1-8717-b5551ed0dbc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x150519d90>]}
+[0m14:02:05.342771 [info ] [Thread-1 (]: 1 of 1 OK created sql view model london_cycles.stg_journeys .................... [[32mCREATE VIEW (0 processed)[0m in 1.30s]
+[0m14:02:05.343185 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.stg_journeys
+[0m14:02:05.344314 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:02:05.344743 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:02:05.344934 [debug] [MainThread]: Connection 'model.london_cycling_analytics.stg_journeys' was properly closed.
+[0m14:02:05.345160 [info ] [MainThread]: 
+[0m14:02:05.345367 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.80 seconds (2.80s).
+[0m14:02:05.345745 [debug] [MainThread]: Command end result
+[0m14:02:05.359004 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:02:05.360568 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:02:05.363872 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m14:02:05.364101 [info ] [MainThread]: 
+[0m14:02:05.364343 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:02:05.364509 [info ] [MainThread]: 
+[0m14:02:05.364692 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m14:02:05.365016 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.6636252, "process_in_blocks": "0", "process_kernel_time": 2.285629, "process_mem_max_rss": "234176512", "process_out_blocks": "0", "process_user_time": 2.256804}
+[0m14:02:05.365344 [debug] [MainThread]: Command `dbt run` succeeded at 14:02:05.365303 after 4.66 seconds
+[0m14:02:05.365589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a25250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10260bb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1026986d0>]}
+[0m14:02:05.365785 [debug] [MainThread]: Flushing usage events
+[0m14:02:05.975093 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:09:07.325893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122fd8590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123046690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123047690>]}
+
+
+============================== 14:09:07.328470 | 1f6239ab-588e-4683-88aa-386a00d579f7 ==============================
+[0m14:09:07.328470 [info ] [MainThread]: Running with dbt=1.9.1
+[0m14:09:07.328927 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'partial_parse': 'True', 'static_parser': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'warn_error': 'None', 'profiles_dir': '/Users/jenniferwang/.dbt', 'empty': 'False', 'no_print': 'None', 'debug': 'False', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_cache_events': 'False', 'printer_width': '80', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'write_json': 'True', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'quiet': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --models intermediate.init_daily_trips', 'version_check': 'True'}
+[0m14:09:08.694458 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1f6239ab-588e-4683-88aa-386a00d579f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122feb110>]}
+[0m14:09:08.721588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1f6239ab-588e-4683-88aa-386a00d579f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074ffa10>]}
+[0m14:09:08.722208 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:09:08.815897 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m14:09:08.877609 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 2 files added, 0 files changed.
+[0m14:09:08.878014 [debug] [MainThread]: Partial parsing: added file: london_cycling_analytics://models/intermediate/init_daily_trips.sql
+[0m14:09:08.878214 [debug] [MainThread]: Partial parsing: added file: london_cycling_analytics://models/staging/stationpopularity-stg_journeys.sql
+[0m14:09:08.878380 [debug] [MainThread]: Partial parsing: deleted file: london_cycling_analytics://models/staging/stg_journeys.sql
+[0m14:09:08.992839 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1f6239ab-588e-4683-88aa-386a00d579f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x147dde5d0>]}
+[0m14:09:09.084677 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:09:09.088109 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:09:09.103613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1f6239ab-588e-4683-88aa-386a00d579f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x147be07d0>]}
+[0m14:09:09.103989 [info ] [MainThread]: Found 4 models, 2 sources, 489 macros
+[0m14:09:09.104195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1f6239ab-588e-4683-88aa-386a00d579f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1478d9190>]}
+[0m14:09:09.105063 [info ] [MainThread]: 
+[0m14:09:09.105274 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:09:09.105433 [info ] [MainThread]: 
+[0m14:09:09.105747 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:09:09.106242 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m14:09:09.106586 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:09:10.427478 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m14:09:10.428144 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:09:10.669719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1f6239ab-588e-4683-88aa-386a00d579f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1407a8090>]}
+[0m14:09:10.670217 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:09:10.671433 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.init_daily_trips
+[0m14:09:10.671810 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.init_daily_trips ..................... [RUN]
+[0m14:09:10.672110 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.init_daily_trips)
+[0m14:09:10.672334 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.init_daily_trips
+[0m14:09:10.677262 [debug] [Thread-1 (]: Writing injected SQL for node "model.london_cycling_analytics.init_daily_trips"
+[0m14:09:10.678247 [debug] [Thread-1 (]: Began executing node model.london_cycling_analytics.init_daily_trips
+[0m14:09:10.694017 [debug] [Thread-1 (]: Writing runtime sql for node "model.london_cycling_analytics.init_daily_trips"
+[0m14:09:10.694736 [debug] [Thread-1 (]: On model.london_cycling_analytics.init_daily_trips: /* {"app": "dbt", "dbt_version": "1.9.1", "profile_name": "london_cycling_analytics", "target_name": "dev", "node_id": "model.london_cycling_analytics.init_daily_trips"} */
+
+
+  create or replace view `custom-range-446703-e1`.`london_cycles`.`init_daily_trips`
+  OPTIONS()
+  as 
+
+SELECT start_date AS date, 
+  EXTRACT(DATE FROM start_date) AS trip_date,
+  day_of_week,
+  COUNT(*) AS total_trips,
+  AVG(duration_seconds)/60 AS avg_duration_minutes
+FROM ('london_cycles', 'trips')
+GROUP BY
+  date, trip_date, day_of_week
+ORDER BY
+  trip_date;
+
+
+[0m14:09:10.694999 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:09:10.981609 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:cc24afca-0f5b-4c3a-b123-b5506a09e3bd&page=queryresults
+[0m14:09:10.982755 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:cc24afca-0f5b-4c3a-b123-b5506a09e3bd&page=queryresults
+[0m14:09:10.990116 [debug] [Thread-1 (]: Database Error in model init_daily_trips (models/intermediate/init_daily_trips.sql)
+  Syntax error: Unexpected string literal 'london_cycles' at [13:7]
+  compiled code at target/run/london_cycling_analytics/models/intermediate/init_daily_trips.sql
+[0m14:09:10.992032 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1f6239ab-588e-4683-88aa-386a00d579f7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x147b82250>]}
+[0m14:09:10.992974 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model london_cycles.init_daily_trips ............ [[31mERROR[0m in 0.32s]
+[0m14:09:10.993622 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.init_daily_trips
+[0m14:09:10.994108 [debug] [Thread-7 (]: Marking all children of 'model.london_cycling_analytics.init_daily_trips' to be skipped because of status 'error'.  Reason: Database Error in model init_daily_trips (models/intermediate/init_daily_trips.sql)
+  Syntax error: Unexpected string literal 'london_cycles' at [13:7]
+  compiled code at target/run/london_cycling_analytics/models/intermediate/init_daily_trips.sql.
+[0m14:09:10.995591 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:09:10.996120 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:09:10.996375 [debug] [MainThread]: Connection 'model.london_cycling_analytics.init_daily_trips' was properly closed.
+[0m14:09:10.996699 [info ] [MainThread]: 
+[0m14:09:10.996918 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.89 seconds (1.89s).
+[0m14:09:10.997265 [debug] [MainThread]: Command end result
+[0m14:09:11.010006 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:09:11.011109 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:09:11.014227 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m14:09:11.014513 [info ] [MainThread]: 
+[0m14:09:11.014817 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m14:09:11.014998 [info ] [MainThread]: 
+[0m14:09:11.015218 [error] [MainThread]:   Database Error in model init_daily_trips (models/intermediate/init_daily_trips.sql)
+  Syntax error: Unexpected string literal 'london_cycles' at [13:7]
+  compiled code at target/run/london_cycling_analytics/models/intermediate/init_daily_trips.sql
+[0m14:09:11.015389 [info ] [MainThread]: 
+[0m14:09:11.015576 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m14:09:11.015899 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.735173, "process_in_blocks": "0", "process_kernel_time": 1.142523, "process_mem_max_rss": "239828992", "process_out_blocks": "0", "process_user_time": 3.079734}
+[0m14:09:11.016225 [debug] [MainThread]: Command `dbt run` failed at 14:09:11.016185 after 3.74 seconds
+[0m14:09:11.016483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122bc0ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x121e3ba10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x121e3b4d0>]}
+[0m14:09:11.016690 [debug] [MainThread]: Flushing usage events
+[0m14:09:11.602068 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:09:37.158908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069e0190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a46690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a2ab90>]}
+
+
+============================== 14:09:37.161138 | 26604960-379a-45a1-8b11-356c72e02593 ==============================
+[0m14:09:37.161138 [info ] [MainThread]: Running with dbt=1.9.1
+[0m14:09:37.161610 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'static_parser': 'True', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'partial_parse': 'True', 'introspect': 'True', 'use_colors': 'True', 'profiles_dir': '/Users/jenniferwang/.dbt', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --models intermediate.init_daily_trips', 'warn_error': 'None', 'fail_fast': 'False', 'log_cache_events': 'False', 'version_check': 'True', 'log_format': 'default', 'target_path': 'None', 'empty': 'False', 'write_json': 'True', 'printer_width': '80', 'debug': 'False', 'send_anonymous_usage_stats': 'True'}
+[0m14:09:38.313023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '26604960-379a-45a1-8b11-356c72e02593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a2ab90>]}
+[0m14:09:38.338889 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '26604960-379a-45a1-8b11-356c72e02593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103357290>]}
+[0m14:09:38.339428 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:09:38.432969 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m14:09:38.498343 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:09:38.498803 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/intermediate/init_daily_trips.sql
+[0m14:09:38.615625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '26604960-379a-45a1-8b11-356c72e02593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x169e1cc90>]}
+[0m14:09:38.711542 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:09:38.715103 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:09:38.730738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '26604960-379a-45a1-8b11-356c72e02593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x169f22850>]}
+[0m14:09:38.731121 [info ] [MainThread]: Found 4 models, 2 sources, 489 macros
+[0m14:09:38.731337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '26604960-379a-45a1-8b11-356c72e02593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x169fb3f50>]}
+[0m14:09:38.732224 [info ] [MainThread]: 
+[0m14:09:38.732443 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:09:38.732598 [info ] [MainThread]: 
+[0m14:09:38.732892 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:09:38.733561 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m14:09:38.733869 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:09:39.812683 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m14:09:39.813271 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:09:40.064136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '26604960-379a-45a1-8b11-356c72e02593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16a0a2bd0>]}
+[0m14:09:40.064653 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:09:40.066356 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.init_daily_trips
+[0m14:09:40.066801 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.init_daily_trips ..................... [RUN]
+[0m14:09:40.067335 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.init_daily_trips)
+[0m14:09:40.068171 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.init_daily_trips
+[0m14:09:40.077676 [debug] [Thread-1 (]: Writing injected SQL for node "model.london_cycling_analytics.init_daily_trips"
+[0m14:09:40.078375 [debug] [Thread-1 (]: Began executing node model.london_cycling_analytics.init_daily_trips
+[0m14:09:40.101368 [debug] [Thread-1 (]: Writing runtime sql for node "model.london_cycling_analytics.init_daily_trips"
+[0m14:09:40.102183 [debug] [Thread-1 (]: On model.london_cycling_analytics.init_daily_trips: /* {"app": "dbt", "dbt_version": "1.9.1", "profile_name": "london_cycling_analytics", "target_name": "dev", "node_id": "model.london_cycling_analytics.init_daily_trips"} */
+
+
+  create or replace view `custom-range-446703-e1`.`london_cycles`.`init_daily_trips`
+  OPTIONS()
+  as 
+
+SELECT start_date AS date, 
+  EXTRACT(DATE FROM start_date) AS trip_date,
+  day_of_week,
+  COUNT(*) AS total_trips,
+  AVG(duration_seconds)/60 AS avg_duration_minutes
+FROM trips
+GROUP BY
+  date, trip_date, day_of_week
+ORDER BY
+  trip_date;
+
+
+[0m14:09:40.102548 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:09:40.370101 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:1742377d-c718-47ce-9d12-63e5f94e3839&page=queryresults
+[0m14:09:40.374830 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:1742377d-c718-47ce-9d12-63e5f94e3839&page=queryresults
+[0m14:09:40.382314 [debug] [Thread-1 (]: Database Error in model init_daily_trips (models/intermediate/init_daily_trips.sql)
+  Table "trips" must be qualified with a dataset (e.g. dataset.table).
+  compiled code at target/run/london_cycling_analytics/models/intermediate/init_daily_trips.sql
+[0m14:09:40.383666 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '26604960-379a-45a1-8b11-356c72e02593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x169b29590>]}
+[0m14:09:40.384250 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model london_cycles.init_daily_trips ............ [[31mERROR[0m in 0.32s]
+[0m14:09:40.384573 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.init_daily_trips
+[0m14:09:40.384962 [debug] [Thread-7 (]: Marking all children of 'model.london_cycling_analytics.init_daily_trips' to be skipped because of status 'error'.  Reason: Database Error in model init_daily_trips (models/intermediate/init_daily_trips.sql)
+  Table "trips" must be qualified with a dataset (e.g. dataset.table).
+  compiled code at target/run/london_cycling_analytics/models/intermediate/init_daily_trips.sql.
+[0m14:09:40.386265 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:09:40.386683 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:09:40.386867 [debug] [MainThread]: Connection 'model.london_cycling_analytics.init_daily_trips' was properly closed.
+[0m14:09:40.387058 [info ] [MainThread]: 
+[0m14:09:40.387269 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.65 seconds (1.65s).
+[0m14:09:40.387635 [debug] [MainThread]: Command end result
+[0m14:09:40.404250 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:09:40.405503 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:09:40.409074 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m14:09:40.409273 [info ] [MainThread]: 
+[0m14:09:40.409503 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m14:09:40.409678 [info ] [MainThread]: 
+[0m14:09:40.409894 [error] [MainThread]:   Database Error in model init_daily_trips (models/intermediate/init_daily_trips.sql)
+  Table "trips" must be qualified with a dataset (e.g. dataset.table).
+  compiled code at target/run/london_cycling_analytics/models/intermediate/init_daily_trips.sql
+[0m14:09:40.410055 [info ] [MainThread]: 
+[0m14:09:40.410232 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m14:09:40.410553 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.2960436, "process_in_blocks": "0", "process_kernel_time": 2.024621, "process_mem_max_rss": "236388352", "process_out_blocks": "0", "process_user_time": 2.409562}
+[0m14:09:40.410842 [debug] [MainThread]: Command `dbt run` failed at 14:09:40.410805 after 3.30 seconds
+[0m14:09:40.411077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067eba10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100faf190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x169ae08d0>]}
+[0m14:09:40.411283 [debug] [MainThread]: Flushing usage events
+[0m14:09:40.771580 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:09:55.990025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118edc890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118f46bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118f47910>]}
+
+
+============================== 14:09:55.992817 | c3e362be-414d-49be-a52f-f2bb2599b0c0 ==============================
+[0m14:09:55.992817 [info ] [MainThread]: Running with dbt=1.9.1
+[0m14:09:55.993352 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'introspect': 'True', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'write_json': 'True', 'invocation_command': 'dbt run --models intermediate.init_daily_trips', 'static_parser': 'True', 'log_format': 'default', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'debug': 'False', 'empty': 'False', 'printer_width': '80', 'partial_parse': 'True', 'profiles_dir': '/Users/jenniferwang/.dbt', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'target_path': 'None'}
+[0m14:09:57.397777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c3e362be-414d-49be-a52f-f2bb2599b0c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b378290>]}
+[0m14:09:57.424908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c3e362be-414d-49be-a52f-f2bb2599b0c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105557410>]}
+[0m14:09:57.425391 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:09:57.518704 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m14:09:57.582991 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:09:57.583493 [debug] [MainThread]: Partial parsing: updated file: london_cycling_analytics://models/intermediate/init_daily_trips.sql
+[0m14:09:57.702730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c3e362be-414d-49be-a52f-f2bb2599b0c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b33b6d0>]}
+[0m14:09:57.798341 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:09:57.801995 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:09:57.816389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3e362be-414d-49be-a52f-f2bb2599b0c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b578910>]}
+[0m14:09:57.816747 [info ] [MainThread]: Found 4 models, 2 sources, 489 macros
+[0m14:09:57.816952 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c3e362be-414d-49be-a52f-f2bb2599b0c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b3e4190>]}
+[0m14:09:57.817724 [info ] [MainThread]: 
+[0m14:09:57.817922 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:09:57.818090 [info ] [MainThread]: 
+[0m14:09:57.818375 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:09:57.819116 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_custom-range-446703-e1'
+[0m14:09:57.819484 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:09:58.931824 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1, now list_custom-range-446703-e1_london_cycles)
+[0m14:09:58.932725 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:09:59.169524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c3e362be-414d-49be-a52f-f2bb2599b0c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b33fd10>]}
+[0m14:09:59.170409 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:09:59.172969 [debug] [Thread-1 (]: Began running node model.london_cycling_analytics.init_daily_trips
+[0m14:09:59.173796 [info ] [Thread-1 (]: 1 of 1 START sql view model london_cycles.init_daily_trips ..................... [RUN]
+[0m14:09:59.174473 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_custom-range-446703-e1_london_cycles, now model.london_cycling_analytics.init_daily_trips)
+[0m14:09:59.174960 [debug] [Thread-1 (]: Began compiling node model.london_cycling_analytics.init_daily_trips
+[0m14:09:59.183797 [debug] [Thread-1 (]: Writing injected SQL for node "model.london_cycling_analytics.init_daily_trips"
+[0m14:09:59.184877 [debug] [Thread-1 (]: Began executing node model.london_cycling_analytics.init_daily_trips
+[0m14:09:59.208517 [debug] [Thread-1 (]: Writing runtime sql for node "model.london_cycling_analytics.init_daily_trips"
+[0m14:09:59.209217 [debug] [Thread-1 (]: On model.london_cycling_analytics.init_daily_trips: /* {"app": "dbt", "dbt_version": "1.9.1", "profile_name": "london_cycling_analytics", "target_name": "dev", "node_id": "model.london_cycling_analytics.init_daily_trips"} */
+
+
+  create or replace view `custom-range-446703-e1`.`london_cycles`.`init_daily_trips`
+  OPTIONS()
+  as 
+
+SELECT start_date AS date, 
+  EXTRACT(DATE FROM start_date) AS trip_date,
+  day_of_week,
+  COUNT(*) AS total_trips,
+  AVG(duration_seconds)/60 AS avg_duration_minutes
+FROM london_cycles.trips
+GROUP BY
+  date, trip_date, day_of_week
+ORDER BY
+  trip_date;
+
+
+[0m14:09:59.209548 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:09:59.753900 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=custom-range-446703-e1&j=bq:US:6fa9d86b-efec-48aa-9901-4aa34925230f&page=queryresults
+[0m14:10:00.210563 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c3e362be-414d-49be-a52f-f2bb2599b0c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b3135d0>]}
+[0m14:10:00.211099 [info ] [Thread-1 (]: 1 of 1 OK created sql view model london_cycles.init_daily_trips ................ [[32mCREATE VIEW (0 processed)[0m in 1.04s]
+[0m14:10:00.211493 [debug] [Thread-1 (]: Finished running node model.london_cycling_analytics.init_daily_trips
+[0m14:10:00.212411 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:10:00.212793 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:10:00.212998 [debug] [MainThread]: Connection 'model.london_cycling_analytics.init_daily_trips' was properly closed.
+[0m14:10:00.213212 [info ] [MainThread]: 
+[0m14:10:00.213415 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.39 seconds (2.39s).
+[0m14:10:00.213801 [debug] [MainThread]: Command end result
+[0m14:10:00.227006 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:10:00.228291 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:10:00.231378 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m14:10:00.231572 [info ] [MainThread]: 
+[0m14:10:00.231812 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:10:00.231990 [info ] [MainThread]: 
+[0m14:10:00.232181 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m14:10:00.232489 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.2877426, "process_in_blocks": "0", "process_kernel_time": 1.562425, "process_mem_max_rss": "238354432", "process_out_blocks": "0", "process_user_time": 2.826251}
+[0m14:10:00.232788 [debug] [MainThread]: Command `dbt run` succeeded at 14:10:00.232747 after 4.29 seconds
+[0m14:10:00.233040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118f2b5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1027fbb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102863250>]}
+[0m14:10:00.233256 [debug] [MainThread]: Flushing usage events
+[0m14:10:00.586034 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:12:06.189536 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064dcb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106545d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106547810>]}
+
+
+============================== 14:12:06.192882 | 88a7b10c-a156-41b9-8a2e-1283fce69730 ==============================
+[0m14:12:06.192882 [info ] [MainThread]: Running with dbt=1.9.1
+[0m14:12:06.193535 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'printer_width': '80', 'target_path': 'None', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --models mart.mart_day_of_week', 'no_print': 'None', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'log_format': 'default', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'debug': 'False', 'profiles_dir': '/Users/jenniferwang/.dbt', 'warn_error': 'None', 'fail_fast': 'False', 'partial_parse': 'True', 'version_check': 'True', 'quiet': 'False', 'write_json': 'True'}
+[0m14:12:07.482823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '88a7b10c-a156-41b9-8a2e-1283fce69730', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x169af7450>]}
+[0m14:12:07.510611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '88a7b10c-a156-41b9-8a2e-1283fce69730', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103456190>]}
+[0m14:12:07.511131 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:12:07.617615 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m14:12:07.683130 [debug] [MainThread]: Partial parsing enabled: 2 files deleted, 1 files added, 0 files changed.
+[0m14:12:07.683586 [debug] [MainThread]: Partial parsing: added file: london_cycling_analytics://models/marts/mart_day_of_week.sql
+[0m14:12:07.683787 [debug] [MainThread]: Partial parsing: deleted file: london_cycling_analytics://models/intermediate/int_placeholder.sql
+[0m14:12:07.683964 [debug] [MainThread]: Partial parsing: deleted file: london_cycling_analytics://models/marts/mart_placeholder.sql
+[0m14:12:07.773792 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.london_cycling_analytics.mart_day_of_week' (models/marts/mart_day_of_week.sql) depends on a node named 'int_daily_trips' which was not found
+[0m14:12:07.774293 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.6403747, "process_in_blocks": "0", "process_kernel_time": 2.09925, "process_mem_max_rss": "237092864", "process_out_blocks": "0", "process_user_time": 2.133492}
+[0m14:12:07.774632 [debug] [MainThread]: Command `dbt run` failed at 14:12:07.774582 after 1.64 seconds
+[0m14:12:07.774927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056ffa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106546350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106546fd0>]}
+[0m14:12:07.775151 [debug] [MainThread]: Flushing usage events
+[0m14:12:08.400744 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:12:52.104771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1187d8f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118844790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11882ab90>]}
+
+
+============================== 14:12:52.107752 | 0f3db7e9-f60a-4da4-a58a-34bbbbe28dfe ==============================
+[0m14:12:52.107752 [info ] [MainThread]: Running with dbt=1.9.1
+[0m14:12:52.108166 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'partial_parse': 'True', 'write_json': 'True', 'invocation_command': 'dbt run --models intermediate.init_daily_trips', 'empty': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'target_path': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'warn_error': 'None', 'profiles_dir': '/Users/jenniferwang/.dbt', 'debug': 'False', 'indirect_selection': 'eager', 'printer_width': '80', 'use_colors': 'True', 'quiet': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])'}
+[0m14:12:53.472371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0f3db7e9-f60a-4da4-a58a-34bbbbe28dfe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x169172b10>]}
+[0m14:12:53.497904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0f3db7e9-f60a-4da4-a58a-34bbbbe28dfe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1044ffa10>]}
+[0m14:12:53.498367 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:12:53.592911 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m14:12:53.656131 [debug] [MainThread]: Partial parsing enabled: 2 files deleted, 1 files added, 0 files changed.
+[0m14:12:53.656547 [debug] [MainThread]: Partial parsing: added file: london_cycling_analytics://models/marts/mart_day_of_week.sql
+[0m14:12:53.656740 [debug] [MainThread]: Partial parsing: deleted file: london_cycling_analytics://models/intermediate/int_placeholder.sql
+[0m14:12:53.656905 [debug] [MainThread]: Partial parsing: deleted file: london_cycling_analytics://models/marts/mart_placeholder.sql
+[0m14:12:53.741101 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.london_cycling_analytics.mart_day_of_week' (models/marts/mart_day_of_week.sql) depends on a node named 'int_daily_trips' which was not found
+[0m14:12:53.741601 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.6860394, "process_in_blocks": "0", "process_kernel_time": 1.834704, "process_mem_max_rss": "234209280", "process_out_blocks": "0", "process_user_time": 2.464666}
+[0m14:12:53.741988 [debug] [MainThread]: Command `dbt run` failed at 14:12:53.741942 after 1.69 seconds
+[0m14:12:53.742244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10783ba10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118829f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118829d90>]}
+[0m14:12:53.742479 [debug] [MainThread]: Flushing usage events
+[0m14:12:54.094827 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:14:20.898277 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106fda9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107046690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107047950>]}
+
+
+============================== 14:14:20.901518 | 6955363c-5135-430b-98ac-3db04c0981b8 ==============================
+[0m14:14:20.901518 [info ] [MainThread]: Running with dbt=1.9.1
+[0m14:14:20.902031 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'version_check': 'True', 'debug': 'False', 'static_parser': 'True', 'profiles_dir': '/Users/jenniferwang/.dbt', 'invocation_command': 'dbt run --models mart.mart_day_of_week', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_path': '/Users/jenniferwang/london-cycling-analytics/logs', 'write_json': 'True', 'warn_error': 'None', 'log_format': 'default', 'partial_parse': 'True', 'cache_selected_only': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'fail_fast': 'False', 'quiet': 'False'}
+[0m14:14:22.214955 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6955363c-5135-430b-98ac-3db04c0981b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107068890>]}
+[0m14:14:22.240867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6955363c-5135-430b-98ac-3db04c0981b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103eff5d0>]}
+[0m14:14:22.241400 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m14:14:22.352000 [debug] [MainThread]: checksum: 5e8d1596cf4eae33c11286bbb248a722d21b9f00d8a7ced8137c642517055418, vars: {}, profile: , target: , version: 1.9.1
+[0m14:14:22.415389 [debug] [MainThread]: Partial parsing enabled: 3 files deleted, 2 files added, 0 files changed.
+[0m14:14:22.415819 [debug] [MainThread]: Partial parsing: added file: london_cycling_analytics://models/marts/mart_day_of_week.sql
+[0m14:14:22.416015 [debug] [MainThread]: Partial parsing: added file: london_cycling_analytics://models/intermediate/int_daily_trips.sql
+[0m14:14:22.416211 [debug] [MainThread]: Partial parsing: deleted file: london_cycling_analytics://models/marts/mart_placeholder.sql
+[0m14:14:22.416370 [debug] [MainThread]: Partial parsing: deleted file: london_cycling_analytics://models/intermediate/init_daily_trips.sql
+[0m14:14:22.416527 [debug] [MainThread]: Partial parsing: deleted file: london_cycling_analytics://models/intermediate/int_placeholder.sql
+[0m14:14:22.534417 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6955363c-5135-430b-98ac-3db04c0981b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x162247310>]}
+[0m14:14:22.634062 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:14:22.638458 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:14:22.651814 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6955363c-5135-430b-98ac-3db04c0981b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ffbed0>]}
+[0m14:14:22.652191 [info ] [MainThread]: Found 3 models, 2 sources, 489 macros
+[0m14:14:22.652398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6955363c-5135-430b-98ac-3db04c0981b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16200cdd0>]}
+[0m14:14:22.652847 [warn ] [MainThread]: The selection criterion 'mart.mart_day_of_week' does not match any enabled nodes
+[0m14:14:22.653519 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m14:14:22.653789 [debug] [MainThread]: Command end result
+[0m14:14:22.664409 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/jenniferwang/london-cycling-analytics/target/manifest.json
+[0m14:14:22.665216 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/jenniferwang/london-cycling-analytics/target/semantic_manifest.json
+[0m14:14:22.666699 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/jenniferwang/london-cycling-analytics/target/run_results.json
+[0m14:14:22.666998 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.8314272, "process_in_blocks": "0", "process_kernel_time": 2.265043, "process_mem_max_rss": "237273088", "process_out_blocks": "0", "process_user_time": 2.117415}
+[0m14:14:22.667271 [debug] [MainThread]: Command `dbt run` succeeded at 14:14:22.667230 after 1.83 seconds
+[0m14:14:22.667481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d29490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10088fb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10091c6d0>]}
+[0m14:14:22.667675 [debug] [MainThread]: Flushing usage events
+[0m14:14:23.369229 [debug] [MainThread]: An error was encountered while trying to flush usage events
