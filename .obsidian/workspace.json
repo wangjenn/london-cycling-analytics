@@ -168,8 +168,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4e662447c6380eaf",
+  "active": "acb1591caa876f04",
   "lastOpenFiles": [
+    "scripts/day_of_week_dashboard.py",
+    "scripts/day_of_week.py",
     "scripts/station_popularity_dashboard.py"
   ]
 }
