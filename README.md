@@ -96,12 +96,12 @@ This project uses dbt (data build tool) to transform the raw bicycle data into a
 --- 
 
 ## Reproducibility
-- Ensure everything is set up (e.g., Docker, GCP, BigQuery, Python, Jupyter Notebook) properly and all required packages are installed 
+- First, ensure everything is set up (e.g., Docker, GCP, BigQuery, Python, Jupyter Notebook) properly and all required packages are installed!
   
-1. Clone repository
+**1. Clone repository**
  ```git clone https://github.com/wangjenn/london-bicycle-analysis.git``` 
 
-2. Set up Google Cloud
+**2. Set up Google Cloud**
   - Create a Google account and signup for Google Cloud Platform
   - Create a New Project and take note of the project-id
   - Create a Service Account and configure its Identity and Access Management (IAM) policy:
@@ -120,13 +120,13 @@ This project uses dbt (data build tool) to transform the raw bicycle data into a
   - Close and restart your terminal
   - (_Optional_) Create a new virtual environment
 
-3. Ingest data (Python): download, ingest, and preprocess data for 2021-2024. See [SEE HERE] 
+**3. Ingest data (Python):** download, ingest, and preprocess data for 2021-2024. See [SEE HERE] 
 
-4. Transform data (BigQuery, SQL, Python): create necessary aggregates and tables (**daily_trips, station_popularity**). See [SQL SCRIPTS] and [PYTHON JUPYTER NOTEBOOK] 
+**4. Transform data (dbt, Python)**: create necessary aggregates and tables (**daily_trips, station_popularity**). See [SQL SCRIPTS] and [PYTHON JUPYTER NOTEBOOK] 
 
-5. Analyze data and generate interactive dashboards (Python): analyze data with Python (e.g., pandas) and create interactive dashboards using Plotly in Python [NOTEBOOK HERE]-- analysis notebook. 
+**5. Analyze data and generate interactive dashboards (Python):** analyze data with Python (e.g., pandas) and create interactive dashboards using Plotly in Python [NOTEBOOK HERE]-- analysis notebook. 
 
 
 --- 
-Thanks for taking the time to read through and review this project! 💕
+###_ Thanks for taking the time to read through and review this project! 💕_
 
