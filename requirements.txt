@@ -1,0 +1,30 @@
+# Data Processing
+pandas==2.2.1
+numpy==1.26.4
+
+# Cloud and Database Connections
+google-cloud-bigquery==3.18.0
+google-cloud-storage==2.16.0
+
+# Data Transformation (dbt)
+dbt-core==1.7.9
+dbt-postgres==1.7.9  # or the specific adapter you're using
+dbt-bigquery==1.7.2  # if using BigQuery
+
+# Dashboard and Reporting
+kaleido==0.2.1  # For static image export in Plotly
+
+# Development and Testing
+python-dotenv==1.0.0
+pytest==8.0.2
+
+# Data Visualization
+plotly==5.19.0
+matplotlib==3.8.3
+
+# Optional: Jupyter Notebook 
+jupyter==1.0.0
+ipykernel==6.29.3
+
+# Optional: Logging and Debugging
+logging==0.5.1.2
