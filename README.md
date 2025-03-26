@@ -128,5 +128,5 @@ This project uses dbt (data build tool) to transform the raw bicycle data into a
 
 
 --- 
-###_ Thanks for taking the time to read through and review this project! 💕_
+### Thanks for taking the time to read through and review this project! 💕_
 
