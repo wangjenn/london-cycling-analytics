@@ -108,7 +108,6 @@
 ### 🚴🏻‍♂️ Day of Week Usage
 ![](https://i.imgur.com/pMUgQHX.png)
 
-![[london_bicycle_dashboard 1.png]]
 - **Week day vs. Weekend Ratio by Year**
 ![ScreenFloat Shot of Preview at Mar 26, 2025 at 4_41_34 PM](https://p.ipic.vip/z02sy4.png)
 
