@@ -116,7 +116,7 @@
 ---
 
 ## ✨ Reproducibility
-- First, ensure everything is set up (e.g., Docker, GCP, BigQuery, Python, Jupyter Notebook) properly and all required packages are installed!
+- First, ensure everything is set up (e.g., GCP, BigQuery, Python, dbt) and all required packages are installed! Refer to [requirements.txt](https://github.com/wangjenn/london-cycling-analytics/blob/main/requirements.txt)
   
 
 **1. Clone repository**
