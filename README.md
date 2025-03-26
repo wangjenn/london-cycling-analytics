@@ -61,7 +61,7 @@
 
 ## ✨ Dataset and Variable Descriptions 
 
-### Day of Week Usage (`daily_trips`)
+### Day of Week Usage
 | Variable          | Description                                | Data Type |
 | ----------------- | ------------------------------------------ | --------- |
 | `year`            | Year of observation (2021-2024)            | Integer   |
@@ -71,7 +71,7 @@
 | `avg_daily_trips` | Average daily trips (total_trips/num_days) | Float     |
 |                   |                                            |           |
 
-## Station Popularity (`station_popularity`) 
+## Station Popularity
 | Variable        | Description                                            | Data Type |    
 | --------------- | ------------------------------------------------------ | --------- |
 | `station_id`    | Unique identifier for bicycle docking station          | Integer   |
