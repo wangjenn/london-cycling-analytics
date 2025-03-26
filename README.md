@@ -28,7 +28,7 @@
 - **Data Lake**: Google Cloud Storage (GCS)-- cloud storage to store raw and processed datasets
 - **Data Warehouse**: BigQuery-- serverless data warehouse for analytics. **Partitioned tables** by date to optimize query performance and reduce costs 
 - **Workflow Orchestration**: semi-automated **batch processing** for workflow orchestration
-- **Transformations**: SQL/Python-- SQL and various packages in Python (e.g., pandas, numpy) to clean, transform, create, and standardize metrics. 
+- **Transformations**: dbt/Python-- dbt and various packages in Python (e.g., pandas, numpy) to clean, transform, create, and standardize metrics. 
 - **Dashboard Visualization**: Plotly (Python)-- interactive visualizations with multiple dashboard tiles and standalone HTML files for easy sharing and deployment
 
 ## Pipeline Workflow 
@@ -53,6 +53,16 @@
    - Generated interactive dashboards for **station popularity** and **temporal usage patterns**
    - Exported interactive HTML dashboards for easy viewing and sharing
   
+## Data Transformations with dbt
+This project uses dbt (data build tool) to transform the raw bicycle data into analytics-ready tables:
+- **Staging models**: Clean and standardize raw data
+- **Intermediate models**: Create aggregated daily metrics
+- **Analytics models**: Generate final tables for dashboards
+
+**Key transformations include:**
+- Daily trip aggregation by day of week
+- Station popularity metrics (total_traffic, net_flow)
+- Standardized time-based analysis
 
 ---
 
@@ -81,10 +91,13 @@
   - Create a new key for the service account, and download the key as JSON credentials. Store the key in a secure location.
   -  Install the Google Cloud SDK
   - Replace the GCP key location in the following codes and execute the codes on terminal:
-  ```gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS```
-  ```gcloud auth application-default login```
+  
+    ```gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS```
+    
+    ```gcloud auth application-default login```
+    
   - Close and restart your terminal
-  - (Optional) Create a new virtual environment
+  - (_Optional_) Create a new virtual environment
 
 3. Ingest data (Python): download, ingest, and preprocess data for 2021-2024. See [SEE HERE] 
 
