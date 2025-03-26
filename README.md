@@ -66,7 +66,28 @@ This project uses dbt (data build tool) to transform the raw bicycle data into a
 
 ---
 
-## Dataset
+## Dataset Descriptions 
+
+### Day of Week Usage (`daily_trips`)
+| Variable          | Description                                | Data Type |
+| ----------------- | ------------------------------------------ | --------- |
+| `year`            | Year of observation (2021-2024)            | Integer   |
+| `day_of_week`     | Day of the week (Monday-Sunday)            | String    |
+| `total_trips`     | Total number of bicycle trips              | Integer   |
+| `num_days`        | Number of days sampled                     | Integer   |
+| `avg_daily_trips` | Average daily trips (total_trips/num_days) | Float     |
+|                   |                                            |           |
+
+## Station Popularity (`station_popularity`) 
+| Variable        | Description                                            | Data Type |     |     |
+| --------------- | ------------------------------------------------------ | --------- | --- | --- |
+| `station_id`    | Unique identifier for bicycle docking station          | Integer   |     |     |
+| `station_name`  | Name and location of the station                       | String    |     |     |
+| `total_starts`  | Number of trips that began at this station             | Integer   |     |     |
+| `total_ends`    | Number of trips that ended at this station             | Integer   |     |     |
+| `total_traffic` | Sum of starts and ends (overall usage)                 | Integer   |     |     |
+| `net_flow`      | Difference between starts and ends (starts minus ends) | Integer   |     |     |
+
 
 --- 
 
