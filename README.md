@@ -89,7 +89,6 @@
 - See ==LINK==
 
 
-
 ### 🚴🏻‍♂️ Station Popularity
 
 #### **Top Bicycle Stations by Total Traffic:** 
@@ -142,7 +141,9 @@
 
 **4. Transform data (dbt)**: create all necessary aggregates and tables using **dbt**. Make sure to follow dbt's best practices (e.g., following structured model hierarchy, defining clear model dependencies). Refer to [models](https://github.com/wangjenn/london-cycling-analytics/tree/main/models) and [dbt_project.yml](https://github.com/wangjenn/london-cycling-analytics/blob/main/dbt_project.yml) 
 
-**5. Analyze data and generate interactive dashboards (Python):** analyze data with Python (e.g., pandas) and create interactive dashboards using Plotly in Python [NOTEBOOK HERE]-- analysis notebook. 
+**5. Analyze data and generate interactive dashboards (Python):** analyze data with Python (e.g., pandas) and create interactive dashboards using Plotly in Python
+ - Refer to [station_popularity_dashboard.py](https://github.com/wangjenn/london-cycling-analytics/blob/main/scripts/station_popularity_dashboard.py) for **Station Popularity** dashboard
+ - Refer to [day_of_week_dashboard.py](https://github.com/wangjenn/london-cycling-analytics/blob/main/scripts/day_of_week_dashboard.py) for **Day of Week Usage** dashboard 
 
 
 ---
