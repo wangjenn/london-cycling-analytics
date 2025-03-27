@@ -168,8 +168,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "acb1591caa876f04",
+  "active": "4e662447c6380eaf",
   "lastOpenFiles": [
+    "().md",
+    "README.md",
     "dashboards/index.html",
     "images/station_popularity_top5_netflow copy.png",
     "dashboards/station_popularity_top5_netflow copy.png",
@@ -190,7 +192,6 @@
     "dashboards/london_bicycle_dashboard copy.png",
     "images/london_bicycle_dashboard copy.png",
     "dashboards/weekday_weekend_ratio.png",
-    "dashboards/weekday_vs_weekend.html",
     "README~.md"
   ]
 }
