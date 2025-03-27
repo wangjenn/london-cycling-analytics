@@ -89,7 +89,7 @@
 
 ### 🚴🏻‍♂️ Station Popularity
 
-#### **Top Bicycle Stations by Total Traffic:** wwe
+#### **Top Bicycle Stations by Total Traffic:**
 ![](https://i.imgur.com/1dDylpf.png)
 ![](https://i.imgur.com/IKNxQWK.png)
 ![Uploading file...drdhs]()
@@ -120,7 +120,7 @@
 ![ScreenFloat Shot of Preview at Mar 26, 2025 at 4_41_34 PM](https://p.ipic.vip/z02sy4.png)
 
 - **NOTES**: 
-	- Commuting** patterns make sense 
+	- Commuting patterns make sense 
 ---
 
 ## ✨ Reproducibility
