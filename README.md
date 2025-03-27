@@ -85,8 +85,7 @@
 ---
 
 ## ✨ Dashboards and Insights
-
-[ ] See **LINK**
+- Refer to dashboards [here](https://github.com/wangjenn/london-cycling-analytics/tree/main/dashboards)
 
 ### 🚴🏻‍♂️ Station Popularity
 
