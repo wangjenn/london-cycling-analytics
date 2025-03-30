@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "238ad7113b640f63",
+        "id": "51d17716cd71d022",
         "type": "tabs",
         "children": [
           {
-            "id": "acb1591caa876f04",
+            "id": "4aacbd35d72c01f2",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,11 +168,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "acb1591caa876f04",
+  "active": "4aacbd35d72c01f2",
   "lastOpenFiles": [
+    "london-cyling original draft.md",
+    "README.md",
     "dashboards/station_composition.html",
     "().md",
-    "README.md",
     "dashboards/index.html",
     "images/station_popularity_top5_netflow copy.png",
     "dashboards/station_popularity_top5_netflow copy.png",
@@ -186,7 +187,6 @@
     "dashboards/station_flow_patterns.html",
     "dashboards/station_flow_patterns copy.html",
     "dashboards/area_popularity.html",
-    "dashboards/area_popularity copy.html",
     "dashboards/station_popularity_top5.png",
     "dashboards/top5-flows.png",
     "dashboards/weekday_weekends_by_year_overview.png",
