@@ -1,24 +1,25 @@
 # Data Engineering Zoomcamp Project - London Cycling Analytics (2021-2024)
 
 ## ✨ Problem Statement
-
 - This project analyzes London's Santander Cycles data to identify usage patterns, high-demand areas, and temporal trends to support better resource allocation and infrastructure planning. Understanding these patterns will help support data-driven decisions for expanding cycling infrastructure in London and promote sustainable transportation options.
 
-## ✨ Business Value
 
+## ✨ Business Value
 - Track bicycle usage pattern changes from 2021-2024 to inform infrastructure adaptation for evolving commuting behaviors, particularly important given the pandemic's global impact
 - Identify high-demand areas for additional docking stations
 - Optimize bicycle rebalancing operations by identifying stations with significant net flow imbalances
 
-## ✨ Data Source 
+--- 
 
+## ✨ Data Source 
 - [Transport for London's (TfL) Santander Cycles](https://cycling.data.tfl.gov.uk/) data
 - Documentation of methodology available [here](https://cycling.data.tfl.gov.uk/ActiveTravelCountsProgramme/0.5%20Strategic%20cycling%20estimates%20-%20methodology%20note.pdf)
 - Strategic sampling of multiple time periods from 2021-2024 to provide comprehensive insights over critical post-pandemic years
 - Following TfL's recommended approach by focusing on relative changes over time rather than absolute values
 
-## ✨ Methodological Approach
+--- 
 
+## ✨ Methodological Approach
 - This project uses a strategic sampling approach rather than processing the complete dataset, selecting specific weeks across each season and year from 2021-2024. This approach was chosen for the following reasons:
 
 	- **Alignment with Industry Standards:** TfL's methodology notes that they collect cycling data "once a year in spring (April to July), on weekdays (preferably Tuesdays to Thursdays) that are 'neutral'" (TfL Cycling Methodology Document, 2022). This project expands on this approach by sampling across multiple seasons.
@@ -31,17 +32,18 @@
 	  3. **Post-pandemic trends** captured from multiple years (2021-2024)
 
 - As noted in the TfL documentation, *"cycling is a mode with characteristics that make monitoring its use more challenging than the monitoring of other modes."* This project addresses these limitations by focusing on relative changes over time rather than absolute values.
+--- 
 
 ## ✨ Data Infrastructure Overview
-
 - **Data Lake:** Google Cloud Storage (GCS) for storing raw and processed datasets
 - **Data Warehouse:** BigQuery with partitioned tables by date to optimize query performance and reduce costs
 - **Workflow Orchestration:** Semi-automated batch processing for workflow orchestration
 - **Transformations:** dbt and Python (pandas, numpy) for cleaning, transforming, creating, and standardizing metrics
 - **Dashboard Visualization:** Plotly (Python) for interactive visualizations with multiple dashboard tiles and standalone HTML files
 
-## ✨ Pipeline Workflow 
+---
 
+## ✨ Pipeline Workflow 
 1. **Data Ingestion:**
    - Batch processing with semi-automated workflow orchestration
    - Downloaded and preprocessed London bicycle data (Python)
@@ -67,6 +69,7 @@
 4. **Dashboard Creation:**
    - Generated interactive dashboards for station popularity and day of week usage
    - Exported interactive HTML dashboards for easy viewing and sharing
+---
 
 ## ✨ Dataset and Variable Descriptions 
 
@@ -88,66 +91,76 @@
 | `num_days`        | Number of days sampled                     | Integer   |
 | `avg_daily_trips` | Average daily trips (total_trips/num_days) | Float     |
 
+---
+
 ## ✨ Dashboards and Insights
-- Dashboards in html format available [here](https://github.com/wangjenn/london-cycling-analytics/tree/main/dashboards) 
-### 🚴 Station Popularity
+- Dashboards in html format available [here](https://github.com/wangjenn/london-cycling-analytics/tree/main/dashboards)
+- Dashboards overview:
+	- **Station Popularity**:
+   		- Top Stations by Total Traffic
+  		- Station Net Flow Analysis
+      		- Top Origin and Destination Stations
+   	- **Day of Week Usage**:
+   	  	- Daily Usage Patterns by Year
+   	  	- Weekly Pattern Analysis
+   	  	- Weekday vs. Weekend Ratio by Year
+
+  
+### 🚴 Station Popularity Dashboards 
 - Key Metrics: 
-	1. **Total Traffic:** The sum of all trips starting and ending at each station
-	2. **Start vs. End Imbalance (Net flow):** The difference between trips starting and ending at each station 
+	- **Total Traffic:** The sum of all trips starting and ending at each station
+	- **Start vs. End Imbalance (Net flow):** The difference between trips starting and ending at each station
+   	- **Station Net Flow**:
+   		- **Negative values**: more people **end** trips there (destinations) than **start** them (origins)
+ 		- **Positive values**: more people **start** trips there (origins) than **end** them (destinations)
+ 		- **Values close to zero** indicate balanced usage (people start and end trips in equal numbers)
 
-#### Top Stations by Total Traffic
-
+- **Top Stations by Total Traffic**
 ![Top 20 Most Popular Stations](https://i.imgur.com/1dDylpf.png)
 ![](https://i.imgur.com/CakXXgO.png)
-- **Preliminary Analysis**: 
-	- The top stations by total traffic are predominantly located near major transit hubs, parks, and tourist attractions. *Hyde Park Corner, Waterloo Station*, and *The Borough* consistently rank among the busiest stations, suggesting these are key integration points with other transportation modes (e.g., subway stations). 
 
-#### Station Net Flow Analysis
- - **Negative values**: more people **end** trips there (destinations) than **start** them (origins).
- - **Positive values**: more people **start** trips there (origins) than **end** them (destinations).
- - **Values close to zero** indicate balanced usage (people start and end trips in equal numbers). 
+- **Station Net Flow Analysis (Starts vs. Ends)**
 ![Net Flow Analysis](https://i.imgur.com/2z3oVFg.png)
 
-- **Preliminary Analysis:** 
-	- **Destination Stations (Negative Net Flow):** Stations like *Hop Exchange* and *Liverpool Street Station* have significantly more trips ending than starting, indicating they are primarily **destinations** rather than origins.
-	- **Origin Stations (Positive Net Flow):** Stations like *Hyde Park Corner* and *St. James's Park* have more trips **starting** than ending, suggesting they are popular starting points for trips (origins). 
-	- **Balanced Stations:** Stations with net flow values close to zero have roughly equal numbers of trips starting and ending, indicating balanced usage patterns.
-
-#### Top Origin and Destination Stations
-- Using **net flows** to identify top origin stations and top destination stations.
+- **Top Origin and Destination Stations**
 ![Top 5 Origin and Destination Stations](https://i.imgur.com/3MYVFQf.png)
 
-- **Preliminary Analysis**: 
-	- The stark contrast between origin and destination stations suggests distinct usage patterns tied to commuting behaviors, with **residential areas** serving as origins and **commercial** or **business districts** serving as destinations. 
-	- This information is particularly valuable for bicycle rebalancing operations, as it highlights which stations require more attention and will likely need more bicycles added throughout the day.
+- **Preliminary Insights**: 
+	- Destination Stations (Negative Net Flow): stations like Hop Exchange (-4,876) and Liverpool Street Station (-3,412) have significantly more trips ending than starting, indicating they are primarily destinations rather than origins. This makes sense as these areas have a high concentration of commercial and business offices. 
+	- Origin Stations (Positive Net Flow): stations like Hyde Park Corner (+1,190) and St. James's Park (+985) have more trips starting than ending, suggesting they are popular starting points for trips. This makes sense as these areas have a high concentration of residential buildings. 
+	- Balanced Stations: stations with net flow values close to zero have roughly equal numbers of trips starting and ending, indicating balanced usage patterns.
+	- These analyses may be particularly valuable for bicycle rebalancing operations, as it identifies which stations may require more attention. Stations that are considered top **destination** stations may require additional resources to expand. The analyses suggest that distinct usage patterns are tied to commuting behaviors, with residential areas serving as origins and commercial or business districts serving as destinations.
 
+---
 ### 🚴 Day of Week Usage Patterns
 - Daily use patterns to provide insights into how bicycle usage varies throughout the week and how these patterns have changed from 2021 to 2024.
-#### Daily and Weekly Usage Patterns by Year
 
+- **Daily and Weekly Usage Patterns by Year**
 ![Daily Usage By Year](https://i.imgur.com/pMUgQHX.png)
 ![Weekly Pattern Analysis](https://i.imgur.com/uzd0bXC.png)
-
 ![Weekday vs. Weekend Ratio](https://p.ipic.vip/z02sy4.png)
 
-**Preliminary Analysis**: 
-- **Evolving Weekday-Weekend Patterns:** The relationship between weekday and weekend usage has changed significantly over the years, *consistent with lockdowns and return-to-office (RTO) policies*. 
-    - In **2021** (immediate post-lockdown): lower overall usage with less pronounced weekday/weekend differences, though weekend usage (particularly Sunday) was relatively strong compared to weekdays. 
-    - In **2022-2023**: steady growth in usage, with weekday usage became more dominant as commuting patterns and RTO policies resumed.
-    - By **2024**: continuing growth with some normalization of weekday vs. weekend; balanced pattern emerged, though with weekdays still showing higher usage. 
-- **Midweek Usage:** Tuesday through Thursday typically show higher usage in more recent years, aligning with common hybrid work patterns.
-- **Year-over-Year Growth:** average daily trips show a steady increase from 2021 to 2024, indicating growing popularity of cycling in London post-pandemic.
-- **Weekend Recovery:** weekend usage has grown alongside weekday usage, suggesting increasing recreational and leisure cycling.
-- **Weekday vs. Weekend Ratio**: weekday vs. weekend ratio stabilized around 1.4-1.5 in recent years, suggests that on average, for every 10 trips on weekends, there are approximately 14-15 trips on weekdays. The trend indicates a gradual return to pre-pandemic commuting patterns while maintaining stronger weekend recreational usage
+- **Preliminary Insights**: 
+	- **Evolving Weekday-Weekend Patterns:** The relationship between weekday and weekend usage has changed significantly over the years, *consistent with lockdowns and companies' return-to-office (RTO) policies*. 
+	    - In **2021** (immediate post-lockdown): lower overall usage with less pronounced weekday/weekend differences, though weekend usage (particularly Sunday) was relatively strong compared to weekdays. 
+	    - In **2022-2023**: steady growth in usage, with weekday usage became more dominant as commuting patterns and RTO policies resumed.
+	    - By **2024**: continuing growth with some normalization of weekday vs. weekend; balanced pattern emerged, though with weekdays still showing higher usage. 
+	- **Midweek Usage:** Tuesday through Thursday typically show higher usage in more recent years, aligning with common hybrid work patterns.
+	- **Year-over-Year Growth:** average daily trips show a steady increase from 2021 to 2024, indicating growing popularity of cycling in London post-pandemic.
+	- **Weekend Recovery:** weekend usage has grown alongside weekday usage, suggesting increasing recreational and leisure cycling.
+	- **Weekday vs. Weekend Ratio**: weekday vs. weekend ratio stabilized around 1.4-1.5 in recent years, suggests that on average, for every 10 trips on weekends, there are approximately 14-15 trips on weekdays. The trend indicates a gradual return to pre-pandemic commuting patterns while maintaining stronger weekend recreational usage
+	- These trends provide ipmortant information about post-pandemic recovery and the establishment of new mobility patterns in London.
 
-## ✨ Preliminary Key Findings and Recommendations
+---
 
-- Combined together, these preliminary analyses suggest the following recommendations for bicycle infrastructure planning and operations:
-	1. **Rebalancing operations:** focus bicycle rebalancing efforts on the stations with extreme net flow values, particularly during peak commuting hours.
-	2. **Station expansion:** consider adding capacity to the busiest stations identified in our traffic analysis, especially those that show consistent high usage.
-	3. **New Station Locations:** the popularity of stations near major transit hubs suggests that future expansions should prioritize integration with the broader transportation network.
-	4. **Weekend Service:** the growing weekend usage indicates a need for improved service levels on weekends, particularly around parks and recreational areas.
-	5. **Weekday Capacity:** continue to maintain adequate capacity and service levels for Tuesday through Thursday, which continue to be the busiest days, consistent with hybrid company office policies. 
+## ✨ Key Findings and Recommendations
+- Combined, these preliminary analyses suggest the following for bicycle infrastructure planning and operations:
+	1. **Rebalance operations:** focus bicycle rebalancing efforts on the stations with extreme net flow values, particularly during peak commuting hours. Net flow imbalances (especially during rush hours) often lead to bikes piling up at some stations and running out at others-- addressing this helps avoid frustration and ensures availability.
+	3. **Station expansion:** consider adding capacity to the busiest stations identified, especially those that show consistent high usage. The popularity of stations near major transit hubs suggests that future expansions should prioritize integration with the broader transportation network (e.g, multi-modality) to enhance overall system utility.
+ 	5. **Weekday capacity:** continue to maintain adequate capacity and service levels for the busiest days (Tuesday-Thursday) as hybrid work trends continue. 
+	6. **Weekend Service:** the growing weekend usage indicates a potential need for improved service levels on weekends, particularly around parks and recreational areas.
+ 
+---
 
 ## ✨ Reproducibility
 
@@ -194,4 +207,4 @@ pip install -r requirements.txt
 
 ---
 
-- *Thanks for taking the time to read through and review this project! 💕*
+*Thanks so much for taking the time to review this project! 💕*
